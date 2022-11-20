@@ -5,6 +5,7 @@ edition = "2021"
 homepage = "https://github.com/flickyiyo/file-finder"
 repository = "https://github.com/flickyiyo/file-finder"
 license = "MIT"
+description = "An easy to use library to find the files you want"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
