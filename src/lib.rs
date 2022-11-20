@@ -33,7 +33,7 @@ pub fn find_files<'a>(config: FileFinderConfig<'a>) -> Vec<PathBuf> {
         None => env::current_dir().unwrap().to_str().unwrap().to_string(),
     };
 
-    let walk_dir = WalkDirGeneric::<((i32), (bool))>::new(dir_to_scan).process_read_dir(
+    let walk_dir = WalkDirGeneric::<(i32, bool)>::new(dir_to_scan).process_read_dir(
         move |_, _, _, children| {
             // Apply skip
             children
@@ -92,7 +92,7 @@ pub fn find_files<'a>(config: FileFinderConfig<'a>) -> Vec<PathBuf> {
                     }
                     None
                 }
-                Err(e) => None,
+                Err(_) => None,
             }
         })
         .collect()
